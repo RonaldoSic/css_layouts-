@@ -1,0 +1,101 @@
+::-webkit-scrollbar {
+  width: 10px;
+  /* height: 20px; */
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #a5aaad;
+  border-radius: 10px;
+  height: 60px;
+  background-color: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #215fd3;
+  width: 25px;
+  /* height: 30px; */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0bac61;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "header     header    header      header      header    header"
+    "nav        nav       nav         nav         nav       nav"
+    "uc-left    uc-left   uc-center   uc-center   uc-right  uc-right"
+    "middle     middle    middle      lower       lower     lower"
+    "footer     footer    footer      footer      footer    footer";
+  margin: 0;
+  min-height: 100vh;
+}
+body > * {
+  background-color: #666;
+  border: medium solid #222;
+}
+h2 {
+  text-align: center;
+}
+/*  */
+.header {
+  grid-area: header;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.uc-left {
+  grid-area: uc-left;
+}
+
+.uc-center {
+  grid-area: uc-center;
+}
+
+.uc-right {
+  grid-area: uc-right;
+}
+
+.middle {
+  grid-area: middle;
+}
+
+.lower {
+  grid-area: lower;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "header     header    header      header      header"
+      "nav        uc-left   uc-center   uc-center   uc-right"
+      "nav        middle    middle      middle      middle"
+      "nav        lower     lower       lower       lower"
+      "footer     footer    footer      footer      footer";
+  }
+}
